@@ -4,3 +4,4 @@ project(TheCProgrammingLanguageExercises C)
 set(CMAKE_C_STANDARD 99)
 
 add_executable(Exercise_1-8 Exercise_1-8.c)
+add_executable(Exercise_1-9 Exercise_1-9.c)
