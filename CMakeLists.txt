@@ -17,3 +17,5 @@ add_executable(Exercise_1-19 Lesson_1/Exercise_1-19.c)
 add_executable(Exercise_1-20 Lesson_1/Exercise_1-20.c)
 add_executable(Exercise_1-21 Lesson_1/Exercise_1-21.c)
 add_executable(Exercise_1-22 Lesson_1/Exercise_1-22.c)
+
+add_executable(Exercise_2-1 Lesson_2/Exercise_2-1.c)
