@@ -20,3 +20,4 @@ add_executable(Exercise_1-22 Lesson_1/Exercise_1-22.c)
 
 add_executable(Exercise_2-1 Lesson_2/Exercise_2-1.c)
 add_executable(Exercise_2-2 Lesson_2/Exercise_2-2.c)
+add_executable(Exercise_2-3 Lesson_2/Exercise_2-3.c)
