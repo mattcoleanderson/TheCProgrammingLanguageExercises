@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <math.h>
 
 // Write the function htoi(s) , which converts a string of hexadecimal digits
 // (including an optional 0x or 0X) into its equivalent integer value.
@@ -9,7 +10,7 @@
 #define MAX_LINE_LENGTH 1000
 
 int getLine(char stream[], int limit);
-long long htoi(char stream[]);
+unsigned long long htoi(char stream[]);
 
 int main() {
 
@@ -18,7 +19,8 @@ int main() {
 
 
     while (getLine(line, MAX_LINE_LENGTH) > 0) {
-        long decimalValue = htoi(line);
+        unsigned long long decimalValue = htoi(line);
+        (decimalValue == -1) ? printf("Invalid Hexadecimal\n") : printf("%llu\n", decimalValue);
     }
 
 }
@@ -35,28 +37,34 @@ int getLine(char stream[], int limit) {
     return i;
 }
 
-// TODO: Figure out how to convert Alpha Hex character to their representation in decimal form
-//  EX. 'A' == 10 nad 'F' == 16
 
-// TODO: Write algorithm to convert hex digits to decimal
-long long htoi(char stream[]) {
-    long decimalValue;
+int numericalValueOfHexDigit(char hexDigit) {
+    return (isalpha(hexDigit)) ? (tolower(hexDigit) - 'a' + 10) : (hexDigit - '0');
+}
+
+unsigned long long htoi(char stream[]) {
+    unsigned long long decimalValue = 0;
     unsigned long long length = strlen(stream);
     int i = 0;
 
 
+    // Skips the optional hex identifier if present
     if (stream[0] == '0' && (stream[1] == 'x' || stream[1] == 'X')) {
         i = 2;
         length -= 2;
     }
+    // Reduces length if a newline feed is present
     if (stream[length-1] == '\n')
-        length--;
+        length -= 2;
 
-    while (i > length-1) {
+    while (i <= length) {
+
         if (!isxdigit(stream[i]))
             return -1;
-        decimalValue =
+        decimalValue += (unsigned long long) (pow(16, (double) (length - i)) * numericalValueOfHexDigit(stream[i]));
 
         i++;
     }
+
+    return decimalValue;
 }
