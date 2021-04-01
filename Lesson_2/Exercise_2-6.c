@@ -17,7 +17,7 @@ unsigned setBits(unsigned x, int p, int n, unsigned y) {
     // Creates a mask of n digits turned on
     int mask = ~(~0 << n);
     // Amount of bits to shift to p
-    int shift = (p+1-n);
+    int shift = p+1-n;
 
     // Bits to be changed are turned off in x
     // Bits to be changed are turned on in y
