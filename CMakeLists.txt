@@ -31,3 +31,4 @@ add_executable(Exercise_2-10 Lesson_2/Exercise_2-10.c)
 
 add_executable(Exercise_3-1 Lesson_3/Exercise_3-1.c)
 add_executable(Exercise_3-2 Lesson_3/Exercise_3-2.c)
+add_executable(Exercise_3-3 Lesson_3/Exercise_3-3.c)
