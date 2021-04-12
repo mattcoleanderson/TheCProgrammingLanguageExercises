@@ -36,7 +36,7 @@ void itob(int value, char buffer[], int base) {
 
 int main() {
 
-    int value = -16;
+    int value = 123865;
     int base = 16;
     char buffer[1000];
 
