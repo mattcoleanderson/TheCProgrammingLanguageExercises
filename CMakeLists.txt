@@ -38,3 +38,10 @@ add_executable(Exercise_3-6 Lesson_3/Exercise_3-6.c)
 
 add_executable(Exercise_4-1 Lesson_4/Exercise_4-1.c)
 add_executable(Exercise_4-2 Lesson_4/Exercise_4-2.c)
+
+
+add_executable(Exercise_4-3
+        Lesson_4/Exercise_4-3/Exercise_4-3.c
+        Lesson_4/Exercise_4-3/stack.c
+        Lesson_4/Exercise_4-3/getop.c
+        Lesson_4/Exercise_4-3/getch.c)
